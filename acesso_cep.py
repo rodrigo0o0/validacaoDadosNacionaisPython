@@ -13,3 +13,6 @@ class BuscaEndereco:
             return True
         else:
             return False
+
+    def format_cep(self):
+        return "{}-{}".format(self.cep[:4], self.cep[4:])

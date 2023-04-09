@@ -1,5 +1,10 @@
-from acesso_cep import BuscaEndereco
+import requests
 
+cep = '88150000'
+url = 'https://viacep.com.br/ws/{}/json'.format(cep)
 
-cep = '25870145'
-objeto_cep = BuscaEndereco(cep)
+response = requests.get(url)
+endereco = response.json()
+print(endereco)
+print(type(endereco))
+print(endereco['localidade'])
